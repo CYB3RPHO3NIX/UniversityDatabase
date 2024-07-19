@@ -6,7 +6,7 @@
 	[PasswordHash] [varchar](max) NOT NULL,
 	[PasswordSalt] [varchar](1000) NOT NULL,
 	[CreatedBy] [varchar](100) NOT NULL,
-	[CreatedOn] [datetime2](7) NOT NULL,
+	[CreatedOn] [datetime2](3) NOT NULL,
 	[UpdatedBy] [varchar](100) NULL,
-	[UpdatedOn] [datetime2](7) NULL
+	[UpdatedOn] [datetime2](3) NULL
 )
