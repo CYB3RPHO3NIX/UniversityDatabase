@@ -65,6 +65,7 @@
     <Folder Include="Tables\Identity" />
     <Folder Include="Scripts\Identity" />
     <Folder Include="Stored Procedures\Identity" />
+    <Folder Include="Docs" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Schemas\Identity.sql" />
@@ -72,9 +73,11 @@
     <Build Include="Tables\Identity\Roles.sql" />
     <Build Include="Tables\Identity\UsersRolesMap.sql" />
     <Build Include="Stored Procedures\Identity\AddUser.sql" />
+    <Build Include="Stored Procedures\Identity\AddRoleToUser.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="UniversityDatabase.publish.xml" />
+    <None Include="Docs\UniversityDatabase.md" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="Scripts\Identity\Roles.PostDeployment1.sql" />

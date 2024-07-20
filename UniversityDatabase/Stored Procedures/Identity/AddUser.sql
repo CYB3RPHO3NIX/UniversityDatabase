@@ -20,7 +20,7 @@ BEGIN
         SET @PasswordSalt = CAST(CRYPT_GEN_RANDOM(32) AS VARCHAR(1000));
 
         -- Hash the password using SHA-256 algorithm
-        SET @PasswordHash = HASHBYTES('SHA2_256', @PlainTextPassword + @PasswordSalt);
+        SET @PasswordHash = HASHBYTES('SHA2_256', RTRIM(LTRIM(@PlainTextPassword)) + @PasswordSalt);
 
         -- Add the new user with hashed password
         INSERT INTO [Identity].[Users] 
@@ -33,7 +33,7 @@ BEGIN
             CreatedBy,
             CreatedOn
         )
-        VALUES (@Username, @FirstName, @LastName, @PasswordHash, @PasswordSalt, SYSTEM_USER, GETDATE());
+        VALUES (RTRIM(LTRIM(@Username)), RTRIM(LTRIM(@FirstName)), RTRIM(LTRIM(@LastName)), @PasswordHash, @PasswordSalt, SYSTEM_USER, GETDATE());
         
         SET @IsSuccess = 1;
 
